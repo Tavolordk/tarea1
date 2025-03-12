@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Landing page de ejemplo para un negocio">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page de mi Joyeria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav li a {
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s;
+    }
+
+    nav li a:hover {
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    .jumbotron {
+      background: url('https://wallpapers.com/images/hd/jewellery-background-2445-x-2048-mr9lm638l3scj69h.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .jumbotron h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .jumbotron p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-jumbotron {
+      background-color: #ff9800;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn-jumbotron:hover {
+      background-color: #e68900;
+    }
+
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .hero-text button:hover {
+      background-color: #45a049;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .catalogo {
+      margin-bottom: 2rem;
+    }
+
+    .catalogo h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .producto {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+
+    .producto:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .producto img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .producto .info {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .producto .info h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .producto .info p {
+      margin-bottom: 0.5rem;
+    }
+
+    .producto .info .btn-comprar {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background-color: #007BFF;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .producto .info .btn-comprar:hover {
+      background-color: #0056b3;
+    }
+
+    .contacto {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .contacto h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .formulario-contacto {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .formulario-contacto button {
+      background-color: #333;
+      color: #fff;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .formulario-contacto button:hover {
+      background-color: #555;
+    }
+
+    .redes-sociales {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .redes-sociales h4 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .redes-sociales a {
+      margin: 0 0.5rem;
+      display: inline-block;
+      font-size: 1.5rem;
+      color: #555;
+      transition: color 0.3s;
+    }
+
+    .redes-sociales a:hover {
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="container">
+    <div class="logo">MiNegocio</div>
+    <nav>
+      <ul>
+        <li><a href="#jumbotron">Inicio</a></li>
+        <li><a href="#hero">Servicios</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="jumbotron" class="jumbotron">
+    <h1>Bienvenido a MiNegocio</h1>
+    <p>Ofrecemos los mejores productos para ti y tu familia.</p>
+    <button class="btn-jumbotron" onclick="scrollToCatalogo()">Ver Catálogo</button>
+  </section>
+
+  <section id="hero" class="container hero-section">
+    <div class="hero-text">
+      <h2>Conoce nuestra historia</h2>
+      <p>Somos una empresa comprometida con la calidad y la satisfacción de nuestros clientes. Nuestro equipo trabaja cada día para ofrecer productos y servicios que superen tus expectativas.</p>
+      <button onclick="alert('¡Gracias por tu interés!')">Contáctanos</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://wallpapers.com/images/hd/jewelry-background-oxmxw0m0ityihj9i.jpg" alt="Imagen de ejemplo">
+    </div>
+  </section>
+
+  <section id="catalogo" class="container catalogo">
+    <h3>Catálogo de Productos</h3>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://www.ororafael.com/wp-content/uploads/2023/04/Variedad-de-joyas-de-oro-14k-min.jpg" alt="Producto 1">
+        <div class="info">
+          <h4>Producto 1</h4>
+          <p>Descripción breve del producto 1.</p>
+          <span>Precio: $100</span><br/>
+          <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+      </div>
+      <div class="producto">
+        <img src="https://www.ororafael.com/wp-content/uploads/2023/09/Joyas-de-oro-min.jpg" alt="Producto 2">
+        <div class="info">
+          <h4>Producto 2</h4>
+          <p>Descripción breve del producto 2.</p>
+          <span>Precio: $120</span> <br/>
+          <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+      </div>
+      <div class="producto">
+        <img src="https://elceo.com/wp-content/uploads/2023/09/sat_comprar_joyas_.jpg" alt="Producto 3">
+        <div class="info">
+          <h4>Producto 3</h4>
+          <p>Descripción breve del producto 3.</p>
+          <span>Precio: $90</span><br/>
+          <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+      </div>
+      <div class="producto">
+        <img src="https://elceo.com/wp-content/uploads/2023/09/sat_comprar_joyas_.jpg" alt="Producto 4">
+        <div class="info">
+          <h4>Producto 4</h4>
+          <p>Descripción breve del producto 4.</p>
+          <span>Precio: $90</span><br/>
+          <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+      </div>    
+    </div>
+  </section>
+
+  <section id="contacto" class="container contacto">
+    <h3>Contáctanos</h3>
+    <form class="formulario-contacto" onsubmit="enviarFormulario(event)">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section class="container redes-sociales">
+    <h4>Síguenos en nuestras redes</h4>
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="https://e7.pngegg.com/pngimages/827/705/png-clipart-facebook-inc-computer-icons-logo-facebook-logo-desktop-wallpaper.png" alt="facebook"></a>
+    <a href="https://twitter.com" target="_blank" aria-label="Twitter">TW</a>
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram">IG</a>
+    <!-- Agrega más redes si lo deseas -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 MiNegocio. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Función para hacer scroll hacia el catálogo
+    function scrollToCatalogo() {
+      document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Ejemplo de manejo de formulario
+    function enviarFormulario(event) {
+      event.preventDefault();
+      alert('¡Gracias por contactarnos! Pronto te responderemos.');
+      // Aquí podrías agregar la lógica para enviar los datos al servidor
+      event.target.reset();
+    }
+  </script>
+
+</body>
+</html>
